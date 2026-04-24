@@ -355,8 +355,7 @@ export default function Portfolio() {
             background: white !important;
             margin: 0 !important;
             padding: 0 !important;
-            -webkit-print-color-adjust: exact !important;
-            print-color-adjust: exact !important;
+            zoom: 0.72; /* Escala perfecta para meter 1100px en A4 */
           }
           .web-page-card {
             width: 1100px !important;
@@ -369,7 +368,7 @@ export default function Portfolio() {
           main {
             padding-top: 0 !important;
             margin: 0 !important;
-            width: 100% !important;
+            width: 1100px !important;
           }
         }
 
@@ -402,7 +401,7 @@ export default function Portfolio() {
       <div className="fixed top-0 left-0 h-1 bg-black z-[60] print:hidden transition-all duration-75 ease-out" style={{ width: scrollProgress }}></div>
 
       {/* HEADER NAVEGACIÓN - ESCALADO PARA VISTA FIJA */}
-      <header className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b-4 border-black print:static print:bg-white print:border-b-4 print:border-black transition-all">
+      <header className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b-4 border-black print:hidden transition-all">
         <div className="w-[1100px] mx-auto px-12 py-8 flex justify-between items-center gap-6">
           <div className="flex items-center gap-6 group cursor-pointer" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
             <div className="w-16 h-16 bg-black text-white flex items-center justify-center font-bold text-2xl transform group-hover:rotate-180 transition-transform duration-500 shrink-0 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)]">
