@@ -448,7 +448,7 @@ export default function Portfolio() {
                   <img 
                     src={profilePhoto} 
                     alt={portfolioData.header.name}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    className="w-full h-full object-cover transition-all duration-500"
                   />
                   <div className="absolute inset-0 border-2 border-black/10 group-hover:border-transparent transition-colors"></div>
                 </div>
