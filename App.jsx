@@ -339,37 +339,14 @@ export default function Portfolio() {
           box-shadow: 0 40px 100px rgba(0,0,0,0.1);
           border: 1px solid rgba(0,0,0,0.05);
           margin-bottom: 80px;
-          margin-left: auto;
-          margin-right: auto;
           position: relative;
           z-index: 10;
-          width: 1100px;
         }
 
-        @media print {
-          @page {
-            size: A4;
-            margin: 0;
-          }
-          body {
-            background: white !important;
-            margin: 0 !important;
-            padding: 0 !important;
-          }
+        @media (max-width: 1024px) {
           .web-page-card {
-            width: 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            border: none !important;
-            box-shadow: none !important;
-            page-break-after: always !important;
-            page-break-inside: avoid !important;
-          }
-          main {
-            padding-top: 0 !important;
-            margin: 0 !important;
-            width: 100% !important;
-            max-width: 100% !important;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
           }
         }
 
@@ -380,6 +357,14 @@ export default function Portfolio() {
           .mobile-padding-adj {
             padding-left: 24px !important;
             padding-right: 24px !important;
+          }
+        }
+
+        @media print {
+          .web-page-card {
+            margin-bottom: 0;
+            box-shadow: none;
+            border: none;
           }
         }
       `}</style>
@@ -436,8 +421,8 @@ export default function Portfolio() {
         </div>
       </header>
 
-      {/* CONTENIDO PRINCIPAL - ADAPTABILIDAD MÓVIL HÍBRIDA */}
-      <main className="pt-32 sm:pt-64 print:pt-0 max-w-7xl mx-auto print:max-w-full print:px-0 relative z-10 px-4 sm:px-0 min-w-0 sm:min-w-0 lg:min-w-0 xl:min-w-0" style={{ minWidth: window.innerWidth < 768 ? '1100px' : 'auto' }}>
+      {/* CONTENIDO PRINCIPAL - RESPONSIVO ORIGINAL */}
+      <main className="pt-32 sm:pt-64 print:pt-0 max-w-7xl mx-auto print:max-w-full print:px-0 relative z-10 px-4 sm:px-0">
 
         {/* PÁGINA 1: PERFIL PROFESIONAL */}
         <div className="web-page-card print:shadow-none print:border-none print:bg-transparent print:mb-0">
