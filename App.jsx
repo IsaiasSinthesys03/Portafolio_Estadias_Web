@@ -346,6 +346,37 @@ export default function Portfolio() {
           width: 1100px;
         }
 
+        @media print {
+          @page {
+            size: A4;
+            margin: 0;
+          }
+          body {
+            background: white !important;
+            width: 210mm !important;
+            height: 297mm !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+          }
+          .web-page-card {
+            width: 210mm !important;
+            height: 297mm !important;
+            margin: 0 !important;
+            border: none !important;
+            box-shadow: none !important;
+            page-break-after: always !important;
+            page-break-inside: avoid !important;
+            transform: none !important;
+          }
+          main {
+            padding-top: 0 !important;
+            margin: 0 !important;
+            width: 100% !important;
+          }
+        }
+
         @media screen and (max-device-width: 768px) {
           .mobile-text-hide {
             display: none;
