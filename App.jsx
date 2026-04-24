@@ -449,8 +449,8 @@ export default function Portfolio() {
 
                 {/* FOTO PROFESIONAL */}
                 <div className="w-48 h-64 print:w-28 print:h-36 bg-gray-50 border-4 print:border-2 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] print:shadow-none flex flex-col items-center justify-center overflow-hidden shrink-0 relative group transition-transform hover:-translate-x-1 hover:-translate-y-1 print:mt-2">
-                  <img 
-                    src={profilePhoto} 
+                  <img
+                    src={profilePhoto}
                     alt={portfolioData.header.name}
                     className="w-full h-full object-cover transition-all duration-500"
                   />
@@ -733,16 +733,16 @@ export default function Portfolio() {
                   aseptic: gameIcon
                 };
                 const DecoImage = decoMap[project.id];
-                
+
                 return (
                   <AnimatedSection key={project.id} className="grid grid-cols-1 lg:grid-cols-[2.5fr_1.2fr] gap-12 lg:gap-20 print:gap-8 print:grid-cols-1 print:break-inside-avoid relative group/project p-10 border-2 border-black/10 rounded-[2rem] hover:border-black hover:shadow-[30px_30px_60px_rgba(0,0,0,0.05)] transition-all duration-500 print:border-none print:p-0 print:rounded-none overflow-hidden">
-                    
-                    {/* ICONO DECORATIVO 45 GRADOS - POSICIÓN CENTRAL EQUILIBRADA */}
+
+                    {/* ICONO DECORATIVO 45 GRADOS - POSICIÓN AJUSTADA AL ESPACIO BLANCO */}
                     {DecoImage && (
                       <img 
                         src={DecoImage} 
                         alt="decor" 
-                        className="absolute left-[55%] top-10 w-72 h-72 opacity-[0.12] group-hover/project:opacity-[0.20] transition-opacity duration-700 pointer-events-none transform rotate-[-45deg] print:opacity-[0.10]" 
+                        className="absolute left-[38%] top-12 w-64 h-64 opacity-[0.12] group-hover/project:opacity-[0.20] transition-opacity duration-700 pointer-events-none transform rotate-[-45deg] print:opacity-[0.10]" 
                       />
                     )}
 
