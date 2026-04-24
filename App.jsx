@@ -355,7 +355,6 @@ export default function Portfolio() {
             background: white !important;
             margin: 0 !important;
             padding: 0 !important;
-            zoom: 0.72; /* Escala perfecta para meter 1100px en A4 */
           }
           .web-page-card {
             width: 1100px !important;
@@ -400,43 +399,43 @@ export default function Portfolio() {
       {/* BARRA DE PROGRESO */}
       <div className="fixed top-0 left-0 h-1 bg-black z-[60] print:hidden transition-all duration-75 ease-out" style={{ width: scrollProgress }}></div>
 
-      {/* HEADER NAVEGACIÓN - ESCALADO PARA VISTA FIJA */}
+      {/* HEADER NAVEGACIÓN - RESPONSIVO Y FIJO */}
       <header className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b-4 border-black print:hidden transition-all">
-        <div className="w-[1100px] mx-auto px-12 py-8 flex justify-between items-center gap-6">
-          <div className="flex items-center gap-6 group cursor-pointer" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
-            <div className="w-16 h-16 bg-black text-white flex items-center justify-center font-bold text-2xl transform group-hover:rotate-180 transition-transform duration-500 shrink-0 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)]">
-              <Terminal className="w-8 h-8" />
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 py-4 sm:py-8 flex justify-between items-center gap-6">
+          <div className="flex items-center gap-4 sm:gap-6 group cursor-pointer" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-black text-white flex items-center justify-center font-bold text-lg sm:text-2xl transform group-hover:rotate-180 transition-transform duration-500 shrink-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)]">
+              <Terminal className="w-6 h-6 sm:w-8 sm:h-8" />
             </div>
-            <h1 className="text-4xl font-black tracking-tighter uppercase leading-none">Portafolio de <span className="text-gray-400">Estadías</span></h1>
+            <h1 className="text-xl sm:text-4xl font-black tracking-tighter uppercase leading-none">Portafolio <span className="hidden sm:inline">de <span className="text-gray-400">Estadías</span></span></h1>
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-3 sm:gap-6">
             <a
               href={`https://${portfolioData.header.contact.linkedin}`}
               target="_blank" rel="noopener noreferrer"
-              className="p-6 border-4 border-black bg-white hover:bg-black hover:text-white transition-all print:hidden shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1"
+              className="p-3 sm:p-6 border-2 sm:border-4 border-black bg-white hover:bg-black hover:text-white transition-all print:hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1"
             >
-              <Briefcase className="w-8 h-8" />
+              <Briefcase className="w-6 h-6 sm:w-8 sm:h-8" />
             </a>
             <a
               href="https://github.com/IsaiasSinthesys03"
               target="_blank" rel="noopener noreferrer"
-              className="p-6 border-4 border-black bg-white hover:bg-black hover:text-white transition-all print:hidden shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1"
+              className="p-3 sm:p-6 border-2 sm:border-4 border-black bg-white hover:bg-black hover:text-white transition-all print:hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1"
             >
-              <Github className="w-8 h-8" />
+              <Github className="w-6 h-6 sm:w-8 sm:h-8" />
             </a>
             <button
               onClick={() => window.print()}
-              className="flex items-center gap-4 px-6 sm:px-12 py-6 bg-black text-white border-4 border-black font-black text-xl tracking-widest uppercase print:hidden shadow-[12px_12px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all ml-6 mobile-padding-adj"
+              className="flex items-center gap-2 sm:gap-4 px-6 sm:px-12 py-3 sm:py-6 bg-black text-white border-2 sm:border-4 border-black font-black text-xs sm:text-xl tracking-widest uppercase print:hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,0.3)] sm:shadow-[12px_12px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all ml-2 sm:ml-6 mobile-padding-adj"
             >
-              <Printer className="w-8 h-8" /> <span className="mobile-text-hide">Imprimir CV</span>
+              <Printer className="w-6 h-6 sm:w-8 sm:h-8" /> <span className="mobile-text-hide">Imprimir CV</span>
             </button>
           </div>
         </div>
       </header>
 
-      {/* CONTENIDO PRINCIPAL */}
-      <main className="pt-64 print:pt-0 w-[1100px] mx-auto print:max-w-full print:px-0 relative z-10 px-4 sm:px-0">
+      {/* CONTENIDO PRINCIPAL - ANCHO MÍNIMO PARA VISTA DESKTOP EN MÓVIL */}
+      <main className="pt-32 sm:pt-64 print:pt-0 min-w-[1100px] sm:w-[1100px] mx-auto print:max-w-full print:px-0 relative z-10 px-4 sm:px-0">
 
         {/* PÁGINA 1: PERFIL PROFESIONAL */}
         <div className="web-page-card print:shadow-none print:border-none print:bg-transparent print:mb-0">
