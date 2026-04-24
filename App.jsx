@@ -343,7 +343,7 @@ export default function Portfolio() {
           margin-right: auto;
           position: relative;
           z-index: 10;
-          width: 1100px; /* Ancho fijo ligeramente menor para evitar cortes */
+          width: 1100px;
         }
       `}</style>
 
@@ -364,48 +364,43 @@ export default function Portfolio() {
       {/* BARRA DE PROGRESO */}
       <div className="fixed top-0 left-0 h-1 bg-black z-[60] print:hidden transition-all duration-75 ease-out" style={{ width: scrollProgress }}></div>
 
-      {/* HEADER NAVEGACIÓN - AHORA RESPONSIVO */}
-      <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-lg border-b-2 border-black print:static print:bg-white print:border-b-4 print:border-black transition-all">
-        <div className="max-w-7xl mx-auto px-4 sm:px-10 py-3 sm:py-6 flex justify-between items-center gap-2">
-          <div className="flex items-center gap-2 sm:gap-4 group cursor-pointer" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
-            <div className="w-8 h-8 sm:w-12 sm:h-12 bg-black text-white flex items-center justify-center font-bold text-sm sm:text-lg transform group-hover:rotate-180 transition-transform duration-500 shrink-0 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] sm:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">
-              <Terminal className="w-4 h-4 sm:w-6 sm:h-6" />
+      {/* HEADER NAVEGACIÓN - ESCALADO PARA VISTA FIJA */}
+      <header className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b-4 border-black print:static print:bg-white print:border-b-4 print:border-black transition-all">
+        <div className="w-[1100px] mx-auto px-12 py-8 flex justify-between items-center gap-6">
+          <div className="flex items-center gap-6 group cursor-pointer" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
+            <div className="w-16 h-16 bg-black text-white flex items-center justify-center font-bold text-2xl transform group-hover:rotate-180 transition-transform duration-500 shrink-0 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)]">
+              <Terminal className="w-8 h-8" />
             </div>
-            <h1 className="text-base sm:text-3xl font-black tracking-tighter uppercase leading-none truncate max-w-[120px] sm:max-w-none">Portafolio <span className="hidden sm:inline">de <span className="text-gray-400">Estadías</span></span></h1>
+            <h1 className="text-4xl font-black tracking-tighter uppercase leading-none">Portafolio de <span className="text-gray-400">Estadías</span></h1>
           </div>
 
-          <div className="flex items-center gap-2 sm:gap-4">
+          <div className="flex items-center gap-6">
             <a
               href={`https://${portfolioData.header.contact.linkedin}`}
               target="_blank" rel="noopener noreferrer"
-              onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}
-              className="p-2 sm:p-4 border-2 sm:border-4 border-black bg-white hover:bg-black hover:text-white transition-all print:hidden shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 sm:hover:translate-x-1 sm:hover:translate-y-1"
-              title="LinkedIn"
+              className="p-6 border-4 border-black bg-white hover:bg-black hover:text-white transition-all print:hidden shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1"
             >
-              <Briefcase className="w-4 h-4 sm:w-6 sm:h-6" />
+              <Briefcase className="w-8 h-8" />
             </a>
             <a
               href="https://github.com/IsaiasSinthesys03"
               target="_blank" rel="noopener noreferrer"
-              onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}
-              className="p-2 sm:p-4 border-2 sm:border-4 border-black bg-white hover:bg-black hover:text-white transition-all print:hidden shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 sm:hover:translate-x-1 sm:hover:translate-y-1"
-              title="GitHub"
+              className="p-6 border-4 border-black bg-white hover:bg-black hover:text-white transition-all print:hidden shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1"
             >
-              <Github className="w-4 h-4 sm:w-6 sm:h-6" />
+              <Github className="w-8 h-8" />
             </a>
             <button
               onClick={() => window.print()}
-              onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}
-              className="flex items-center gap-2 sm:gap-3 px-3 sm:px-10 py-2 sm:py-4 bg-black text-white border-2 sm:border-4 border-black font-black text-[10px] sm:text-sm tracking-widest uppercase print:hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 sm:hover:translate-x-2 sm:hover:translate-y-2 transition-all ml-1 sm:ml-4"
+              className="flex items-center gap-4 px-12 py-6 bg-black text-white border-4 border-black font-black text-xl tracking-widest uppercase print:hidden shadow-[12px_12px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all ml-6"
             >
-              <Printer className="w-4 h-4 sm:w-6 sm:h-6" /> <span className="hidden sm:inline">Imprimir CV</span>
+              <Printer className="w-8 h-8" /> Imprimir CV
             </button>
           </div>
         </div>
       </header>
 
       {/* CONTENIDO PRINCIPAL */}
-      <main className="pt-48 print:pt-0 w-[1100px] mx-auto print:max-w-full print:px-0 relative z-10">
+      <main className="pt-64 print:pt-0 w-[1100px] mx-auto print:max-w-full print:px-0 relative z-10 px-4 sm:px-0">
 
         {/* PÁGINA 1: PERFIL PROFESIONAL */}
         <div className="web-page-card print:shadow-none print:border-none print:bg-transparent print:mb-0">
