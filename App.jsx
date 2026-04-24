@@ -26,6 +26,10 @@ import {
   Mail
 } from 'lucide-react';
 import profilePhoto from './assets/img/Foto_Isaias.jpeg';
+import helmetIcon from './assets/img/helmet.png';
+import pizzaIcon from './assets/img/pizza.png';
+import kioskIcon from './assets/img/kiosk.png';
+import gameIcon from './assets/img/game_controller.png';
 
 // --- DATA: PROFUNDAMENTE ENRIQUECIDA DESDE LOS READMES Y TU CV ---
 const portfolioData = {
@@ -722,8 +726,25 @@ export default function Portfolio() {
             <div className="flex flex-col gap-20 print:gap-8">
               {portfolioData.projects.map((project, index) => {
                 const ProjectIcon = project.icon;
+                const decoMap = {
+                  strop: helmetIcon,
+                  proyex: kioskIcon,
+                  napoli: pizzaIcon,
+                  aseptic: gameIcon
+                };
+                const DecoImage = decoMap[project.id];
+                
                 return (
-                  <AnimatedSection key={project.id} className="grid grid-cols-1 lg:grid-cols-[2.5fr_1.2fr] gap-12 lg:gap-20 print:gap-8 print:grid-cols-1 print:break-inside-avoid relative group/project p-10 border-2 border-black/10 rounded-[2rem] hover:border-black hover:shadow-[30px_30px_60px_rgba(0,0,0,0.05)] transition-all duration-500 print:border-none print:p-0 print:rounded-none">
+                  <AnimatedSection key={project.id} className="grid grid-cols-1 lg:grid-cols-[2.5fr_1.2fr] gap-12 lg:gap-20 print:gap-8 print:grid-cols-1 print:break-inside-avoid relative group/project p-10 border-2 border-black/10 rounded-[2rem] hover:border-black hover:shadow-[30px_30px_60px_rgba(0,0,0,0.05)] transition-all duration-500 print:border-none print:p-0 print:rounded-none overflow-hidden">
+                    
+                    {/* ICONO DECORATIVO 45 GRADOS */}
+                    {DecoImage && (
+                      <img 
+                        src={DecoImage} 
+                        alt="decor" 
+                        className="absolute -right-12 -bottom-12 w-64 h-64 opacity-[0.03] group-hover/project:opacity-[0.07] transition-opacity duration-700 pointer-events-none transform rotate-[-45deg] print:opacity-[0.05]" 
+                      />
+                    )}
 
                     {/* Número Fondo */}
                     <div className="absolute -left-10 -top-20 text-[18rem] font-black text-black/[0.02] select-none -z-10 print:hidden transition-transform duration-700 group-hover/project:translate-x-4">
