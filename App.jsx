@@ -353,22 +353,18 @@ export default function Portfolio() {
           }
           body {
             background: white !important;
-            width: 210mm !important;
-            height: 297mm !important;
             margin: 0 !important;
             padding: 0 !important;
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
           }
           .web-page-card {
-            width: 210mm !important;
-            height: 297mm !important;
-            margin: 0 !important;
+            width: 1100px !important;
+            margin: 0 auto !important;
             border: none !important;
             box-shadow: none !important;
             page-break-after: always !important;
             page-break-inside: avoid !important;
-            transform: none !important;
           }
           main {
             padding-top: 0 !important;
