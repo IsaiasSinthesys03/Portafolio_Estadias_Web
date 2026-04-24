@@ -345,6 +345,16 @@ export default function Portfolio() {
           z-index: 10;
           width: 1100px;
         }
+
+        @media screen and (max-device-width: 768px) {
+          .mobile-text-hide {
+            display: none;
+          }
+          .mobile-padding-adj {
+            padding-left: 24px !important;
+            padding-right: 24px !important;
+          }
+        }
       `}</style>
 
       {/* TEXTURA DE FONDO */}
@@ -391,9 +401,9 @@ export default function Portfolio() {
             </a>
             <button
               onClick={() => window.print()}
-              className="flex items-center gap-4 px-12 py-6 bg-black text-white border-4 border-black font-black text-xl tracking-widest uppercase print:hidden shadow-[12px_12px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all ml-6"
+              className="flex items-center gap-4 px-6 sm:px-12 py-6 bg-black text-white border-4 border-black font-black text-xl tracking-widest uppercase print:hidden shadow-[12px_12px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all ml-6 mobile-padding-adj"
             >
-              <Printer className="w-8 h-8" /> Imprimir CV
+              <Printer className="w-8 h-8" /> <span className="mobile-text-hide">Imprimir CV</span>
             </button>
           </div>
         </div>
