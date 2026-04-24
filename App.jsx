@@ -25,6 +25,7 @@ import {
   Phone,
   Mail
 } from 'lucide-react';
+import profilePhoto from './assets/img/Foto_Isaias.jpeg';
 
 // --- DATA: PROFUNDAMENTE ENRIQUECIDA DESDE LOS READMES Y TU CV ---
 const portfolioData = {
@@ -442,11 +443,14 @@ export default function Portfolio() {
                   </p>
                 </div>
 
-                {/* ESPACIO PARA FOTO */}
+                {/* FOTO PROFESIONAL */}
                 <div className="w-48 h-64 print:w-28 print:h-36 bg-gray-50 border-4 print:border-2 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] print:shadow-none flex flex-col items-center justify-center overflow-hidden shrink-0 relative group transition-transform hover:-translate-x-1 hover:-translate-y-1 print:mt-2">
-                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
-                  <User className="w-16 h-16 print:w-10 print:h-10 text-black/20" />
-                  <span className="absolute bottom-2 text-[8px] font-black uppercase tracking-tighter text-black/30">ID_PHOTO_SQ</span>
+                  <img 
+                    src={profilePhoto} 
+                    alt={portfolioData.header.name}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  />
+                  <div className="absolute inset-0 border-2 border-black/10 group-hover:border-transparent transition-colors"></div>
                 </div>
               </div>
 
