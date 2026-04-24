@@ -357,8 +357,9 @@ export default function Portfolio() {
             padding: 0 !important;
           }
           .web-page-card {
-            width: 1100px !important;
-            margin: 0 auto !important;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
             border: none !important;
             box-shadow: none !important;
             page-break-after: always !important;
@@ -367,7 +368,8 @@ export default function Portfolio() {
           main {
             padding-top: 0 !important;
             margin: 0 !important;
-            width: 1100px !important;
+            width: 100% !important;
+            max-width: 100% !important;
           }
         }
 
@@ -434,8 +436,8 @@ export default function Portfolio() {
         </div>
       </header>
 
-      {/* CONTENIDO PRINCIPAL - ANCHO MÍNIMO PARA VISTA DESKTOP EN MÓVIL */}
-      <main className="pt-32 sm:pt-64 print:pt-0 min-w-[1100px] sm:w-[1100px] mx-auto print:max-w-full print:px-0 relative z-10 px-4 sm:px-0">
+      {/* CONTENIDO PRINCIPAL - ADAPTABILIDAD MÓVIL HÍBRIDA */}
+      <main className="pt-32 sm:pt-64 print:pt-0 max-w-7xl mx-auto print:max-w-full print:px-0 relative z-10 px-4 sm:px-0 min-w-0 sm:min-w-0 lg:min-w-0 xl:min-w-0" style={{ minWidth: window.innerWidth < 768 ? '1100px' : 'auto' }}>
 
         {/* PÁGINA 1: PERFIL PROFESIONAL */}
         <div className="web-page-card print:shadow-none print:border-none print:bg-transparent print:mb-0">
