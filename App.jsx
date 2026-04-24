@@ -404,9 +404,8 @@ export default function Portfolio() {
         </div>
       </header>
 
-      {/* CONTENIDO PRINCIPAL - CON DESPLAZAMIENTO HORIZONTAL EN MÓVIL */}
-      <div className="w-full overflow-x-auto print:overflow-visible pt-24 sm:pt-48">
-        <main className="w-[1100px] mx-auto print:max-w-full print:px-0 relative z-10 px-4 sm:px-0">
+      {/* CONTENIDO PRINCIPAL */}
+      <main className="pt-48 print:pt-0 w-[1100px] mx-auto print:max-w-full print:px-0 relative z-10">
 
         {/* PÁGINA 1: PERFIL PROFESIONAL */}
         <div className="web-page-card print:shadow-none print:border-none print:bg-transparent print:mb-0">
@@ -830,7 +829,6 @@ export default function Portfolio() {
           </section>
         </div>
       </main>
-      </div>
 
       {/* FOOTER */}
       <footer className="bg-black text-white pt-32 pb-12 mt-32 print:hidden relative overflow-hidden">
