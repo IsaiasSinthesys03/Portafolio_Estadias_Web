@@ -37,7 +37,7 @@ const portfolioData = {
       emailSchool: "24090652@alumno.utmetropolitana.edu.mx",
       phone: "+52 999 272 7810",
       location: "Calle 21 #198c x8 y 8a1, Mérida, Yucatán, C.P. 91173",
-      linkedin: "linkedin.com/in/braulio-isaias-bernal-padron"
+      linkedin: "www.linkedin.com/in/braulio-isaías-bernal-padrón-10a93a405?utm_source=share_via&utm_content=profile&utm_medium=member_android"
     }
   },
   personalInfo: {
