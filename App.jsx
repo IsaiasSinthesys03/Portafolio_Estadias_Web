@@ -278,7 +278,7 @@ export default function Portfolio() {
   }
 
   return (
-    <div className="min-h-screen bg-[#fcfcfc] text-black font-sans selection:bg-brand selection:text-white relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#fcfcfc] text-black font-sans selection:bg-brand selection:text-white relative">
 
       {/* ESTILOS GLOBALES */}
       <style>{`
@@ -382,7 +382,7 @@ export default function Portfolio() {
       <div className="fixed top-0 left-0 h-1 bg-black z-[60] print:hidden transition-all duration-75 ease-out" style={{ width: scrollProgress }}></div>
 
       {/* HEADER NAVEGACIÓN - RESPONSIVO Y FIJO */}
-      <header className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b-4 border-black print:hidden transition-all">
+      <header className="fixed top-0 z-50 bg-white/90 backdrop-blur-xl border-b-4 border-black print:hidden transition-all" style={{ width: window.innerWidth < 768 ? '1100px' : '100%' }}>
         <div className="max-w-7xl mx-auto px-6 sm:px-12 py-4 sm:py-8 flex justify-between items-center gap-6">
           <div className="flex items-center gap-4 sm:gap-6 group cursor-pointer" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
             <div className="w-12 h-12 sm:w-16 sm:h-16 bg-black text-white flex items-center justify-center font-bold text-lg sm:text-2xl transform group-hover:rotate-180 transition-transform duration-500 shrink-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)]">
@@ -417,7 +417,7 @@ export default function Portfolio() {
       </header>
 
       {/* CONTENIDO PRINCIPAL - ADAPTABILIDAD MÓVIL HÍBRIDA */}
-      <main className="pt-32 sm:pt-64 print:pt-0 max-w-7xl mx-auto print:max-w-full print:px-0 relative z-10 px-4 sm:px-0" style={{ minWidth: 'fit-content' }}>
+      <main className="pt-32 sm:pt-64 print:pt-0 max-w-7xl mx-auto print:max-w-full print:px-0 relative z-10 px-4 sm:px-0" style={{ width: window.innerWidth < 768 ? '1100px' : 'auto' }}>
 
         {/* PÁGINA 1: PERFIL PROFESIONAL */}
         <div className="web-page-card print:shadow-none print:border-none print:bg-transparent print:mb-0">
