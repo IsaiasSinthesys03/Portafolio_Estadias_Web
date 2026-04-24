@@ -742,7 +742,7 @@ export default function Portfolio() {
                       <img 
                         src={DecoImage} 
                         alt="decor" 
-                        className="absolute -right-12 -bottom-12 w-64 h-64 opacity-[0.03] group-hover/project:opacity-[0.07] transition-opacity duration-700 pointer-events-none transform rotate-[-45deg] print:opacity-[0.05]" 
+                        className="absolute -right-12 -bottom-12 w-64 h-64 opacity-[0.15] group-hover/project:opacity-[0.25] transition-opacity duration-700 pointer-events-none transform rotate-[-45deg] print:opacity-[0.12]" 
                       />
                     )}
 
