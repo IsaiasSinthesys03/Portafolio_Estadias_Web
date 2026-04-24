@@ -348,8 +348,6 @@ export default function Portfolio() {
             margin-bottom: 40px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.05);
           }
-        }
-
         @media screen and (max-device-width: 768px) {
           .mobile-text-hide {
             display: none;
@@ -361,10 +359,8 @@ export default function Portfolio() {
         }
 
         @media print {
-          .web-page-card {
-            margin-bottom: 0;
-            box-shadow: none;
-            border: none;
+          .print-hidden {
+            display: none !important;
           }
         }
       `}</style>
@@ -421,8 +417,8 @@ export default function Portfolio() {
         </div>
       </header>
 
-      {/* CONTENIDO PRINCIPAL - RESPONSIVO ORIGINAL */}
-      <main className="pt-32 sm:pt-64 print:pt-0 max-w-7xl mx-auto print:max-w-full print:px-0 relative z-10 px-4 sm:px-0">
+      {/* CONTENIDO PRINCIPAL - ADAPTABILIDAD MÓVIL HÍBRIDA */}
+      <main className="pt-32 sm:pt-64 print:pt-0 max-w-7xl mx-auto print:max-w-full print:px-0 relative z-10 px-4 sm:px-0 min-w-0 sm:min-w-0 lg:min-w-0 xl:min-w-0" style={{ minWidth: window.innerWidth < 768 ? '1100px' : 'auto' }}>
 
         {/* PÁGINA 1: PERFIL PROFESIONAL */}
         <div className="web-page-card print:shadow-none print:border-none print:bg-transparent print:mb-0">
@@ -434,12 +430,12 @@ export default function Portfolio() {
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse print:animate-none print:bg-black"></span>
                 Disponible para Estadías Profesionales
               </div>
-              <div className="flex flex-row print:flex-row gap-12 print:gap-6 items-start justify-between">
+              <div className="flex flex-col lg:flex-row print:flex-row gap-12 print:gap-6 items-start justify-between">
                 <div className="flex-1">
-                  <h1 className="text-[6.5rem] print:text-4xl font-black tracking-tighter leading-[0.85] uppercase mb-8 text-black print:mb-1 break-words">
+                  <h1 className="text-6xl sm:text-7xl md:text-[6.5rem] print:text-4xl font-black tracking-tighter leading-[0.85] uppercase mb-8 text-black print:mb-1">
                     {portfolioData.header.name}
                   </h1>
-                  <h2 className="text-3xl print:text-lg font-bold border-l-8 border-black pl-6 mb-10 text-gray-800 print:mb-2 print:py-0.5 print:pl-3">
+                  <h2 className="text-2xl md:text-3xl print:text-lg font-bold border-l-8 border-black pl-6 mb-10 text-gray-800 print:mb-2 print:py-0.5 print:pl-3">
                     {portfolioData.header.title}
                   </h2>
                   <p className="text-xl print:text-[10px] print:leading-tight leading-relaxed text-gray-600 font-medium max-w-4xl text-justify">
@@ -456,31 +452,31 @@ export default function Portfolio() {
               </div>
 
               <div className="flex flex-wrap gap-x-8 gap-y-4 mt-8 pt-6 border-t-2 border-black/10 print:border-black print:mt-2 print:pt-1 print:gap-y-1 print:gap-x-4">
-                <div className="flex items-center gap-2 text-sm print:text-[9px] font-bold break-all">
-                  <Mail className="w-4 h-4 print:w-3 print:h-3 text-gray-500 shrink-0" />
+                <div className="flex items-center gap-2 text-sm print:text-[9px] font-bold">
+                  <Mail className="w-4 h-4 print:w-3 print:h-3 text-gray-500" />
                   {portfolioData.header.contact.email}
                   <button
                     onClick={() => handleCopy(portfolioData.header.contact.email)}
-                    className="p-1 hover:bg-gray-100 rounded transition-colors print:hidden shrink-0"
+                    className="p-1 hover:bg-gray-100 rounded transition-colors print:hidden"
                     title="Copiar personal"
                   >
                     {copiedText === portfolioData.header.contact.email ? <CheckCircle2 className="w-3 h-3 text-green-600" /> : <Copy className="w-3 h-3" />}
                   </button>
                 </div>
-                <div className="flex items-center gap-2 text-sm print:text-[9px] font-bold break-all">
-                  <GraduationCap className="w-4 h-4 print:w-3 print:h-3 text-gray-500 shrink-0" />
+                <div className="flex items-center gap-2 text-sm print:text-[9px] font-bold">
+                  <GraduationCap className="w-4 h-4 print:w-3 print:h-3 text-gray-500" />
                   {portfolioData.header.contact.emailSchool}
                   <button
                     onClick={() => handleCopy(portfolioData.header.contact.emailSchool)}
-                    className="p-1 hover:bg-gray-100 rounded transition-colors print:hidden shrink-0"
+                    className="p-1 hover:bg-gray-100 rounded transition-colors print:hidden"
                     title="Copiar escolar"
                   >
                     {copiedText === portfolioData.header.contact.emailSchool ? <CheckCircle2 className="w-3 h-3 text-green-600" /> : <Copy className="w-3 h-3" />}
                   </button>
                 </div>
-                <span className="flex items-center gap-2 text-sm print:text-[9px] font-bold"><Phone className="w-4 h-4 print:w-3 print:h-3 text-gray-500 shrink-0" /> {portfolioData.header.contact.phone}</span>
-                <span className="flex items-center gap-2 text-sm print:text-[9px] font-bold"><MapPin className="w-4 h-4 print:w-3 print:h-3 text-gray-500 shrink-0" /> {portfolioData.header.contact.location}</span>
-                <span className="flex items-center gap-2 text-sm print:text-[9px] font-bold"><Github className="w-4 h-4 print:w-3 print:h-3 text-gray-500 shrink-0" /> github.com/IsaiasSinthesys03</span>
+                <span className="flex items-center gap-2 text-sm print:text-[9px] font-bold"><Phone className="w-4 h-4 print:w-3 print:h-3 text-gray-500" /> {portfolioData.header.contact.phone}</span>
+                <span className="flex items-center gap-2 text-sm print:text-[9px] font-bold"><MapPin className="w-4 h-4 print:w-3 print:h-3 text-gray-500" /> {portfolioData.header.contact.location}</span>
+                <span className="flex items-center gap-2 text-sm print:text-[9px] font-bold"><Github className="w-4 h-4 print:w-3 print:h-3 text-gray-500" /> github.com/IsaiasSinthesys03</span>
               </div>
             </div>
           </AnimatedSection>
