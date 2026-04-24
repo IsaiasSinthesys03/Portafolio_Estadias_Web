@@ -484,6 +484,16 @@ export default function Portfolio() {
                   </button>
                 </div>
                 <span className="flex items-center gap-2 text-sm print:text-[9px] font-bold"><Phone className="w-4 h-4 print:w-3 print:h-3 text-gray-500" /> {portfolioData.header.contact.phone}</span>
+                <span className="flex items-center gap-2 text-sm print:text-[9px] font-bold">
+                  <MessageCircle className="w-4 h-4 print:w-3 print:h-3 text-green-600" />
+                  <a 
+                    href={`https://wa.me/52${portfolioData.header.contact.whatsapp}`} 
+                    target="_blank" rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    {portfolioData.header.contact.whatsapp}
+                  </a>
+                </span>
                 <span className="flex items-center gap-2 text-sm print:text-[9px] font-bold"><MapPin className="w-4 h-4 print:w-3 print:h-3 text-gray-500" /> {portfolioData.header.contact.location}</span>
                 <span className="flex items-center gap-2 text-sm print:text-[9px] font-bold"><Github className="w-4 h-4 print:w-3 print:h-3 text-gray-500" /> github.com/IsaiasSinthesys03</span>
               </div>
@@ -886,14 +896,7 @@ export default function Portfolio() {
           </div>
 
           <div className="flex flex-col gap-4 w-full md:w-auto">
-            <a
-              href={`mailto:${portfolioData.header.contact.email}`}
-              onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}
-              className="flex items-center justify-between gap-8 border-2 border-white bg-white text-black px-8 py-5 hover:bg-transparent hover:text-white transition-all duration-300 group"
-            >
-              <span className="font-black tracking-widest uppercase text-sm">Contactar Ahora</span>
-              <ArrowRight className="w-5 h-5 transform group-hover:translate-x-2 transition-transform" />
-            </a>
+
 
             {/* Solo se mantuvo tu perfil principal */}
             <div className="flex flex-col gap-2">
