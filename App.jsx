@@ -349,18 +349,17 @@ export default function Portfolio() {
             box-shadow: 0 20px 50px rgba(0,0,0,0.05);
           }
         @media screen and (max-device-width: 768px) {
+          .web-page-card {
+            width: 1100px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
           .mobile-text-hide {
             display: none;
           }
           .mobile-padding-adj {
             padding-left: 24px !important;
             padding-right: 24px !important;
-          }
-        }
-
-        @media print {
-          .print-hidden {
-            display: none !important;
           }
         }
       `}</style>
@@ -418,7 +417,7 @@ export default function Portfolio() {
       </header>
 
       {/* CONTENIDO PRINCIPAL - ADAPTABILIDAD MÓVIL HÍBRIDA */}
-      <main className="pt-32 sm:pt-64 print:pt-0 max-w-7xl mx-auto print:max-w-full print:px-0 relative z-10 px-4 sm:px-0 min-w-0 sm:min-w-0 lg:min-w-0 xl:min-w-0" style={{ minWidth: window.innerWidth < 768 ? '1100px' : 'auto' }}>
+      <main className="pt-32 sm:pt-64 print:pt-0 max-w-7xl mx-auto print:max-w-full print:px-0 relative z-10 px-4 sm:px-0" style={{ minWidth: 'fit-content' }}>
 
         {/* PÁGINA 1: PERFIL PROFESIONAL */}
         <div className="web-page-card print:shadow-none print:border-none print:bg-transparent print:mb-0">
