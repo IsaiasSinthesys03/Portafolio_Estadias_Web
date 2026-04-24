@@ -339,15 +339,11 @@ export default function Portfolio() {
           box-shadow: 0 40px 100px rgba(0,0,0,0.1);
           border: 1px solid rgba(0,0,0,0.05);
           margin-bottom: 80px;
+          margin-left: auto;
+          margin-right: auto;
           position: relative;
           z-index: 10;
-        }
-
-        @media (max-width: 1024px) {
-          .web-page-card {
-            margin-bottom: 40px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
-          }
+          width: 1100px; /* Ancho fijo ligeramente menor para evitar cortes */
         }
       `}</style>
 
@@ -368,48 +364,49 @@ export default function Portfolio() {
       {/* BARRA DE PROGRESO */}
       <div className="fixed top-0 left-0 h-1 bg-black z-[60] print:hidden transition-all duration-75 ease-out" style={{ width: scrollProgress }}></div>
 
-      {/* HEADER NAVEGACIÓN */}
-      <header className="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-black/10 print:static print:bg-white print:border-b-4 print:border-black transition-all">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-2 group cursor-pointer" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
-            <div className="w-8 h-8 bg-black text-white flex items-center justify-center font-bold text-sm transform group-hover:rotate-180 transition-transform duration-500">
-              <Terminal className="w-4 h-4" />
+      {/* HEADER NAVEGACIÓN - AHORA RESPONSIVO */}
+      <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-lg border-b-2 border-black print:static print:bg-white print:border-b-4 print:border-black transition-all">
+        <div className="max-w-7xl mx-auto px-4 sm:px-10 py-3 sm:py-6 flex justify-between items-center gap-2">
+          <div className="flex items-center gap-2 sm:gap-4 group cursor-pointer" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
+            <div className="w-8 h-8 sm:w-12 sm:h-12 bg-black text-white flex items-center justify-center font-bold text-sm sm:text-lg transform group-hover:rotate-180 transition-transform duration-500 shrink-0 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] sm:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">
+              <Terminal className="w-4 h-4 sm:w-6 sm:h-6" />
             </div>
-            <h1 className="text-xl font-black tracking-tighter uppercase">Portafolio de <span className="text-gray-400">Estadías</span></h1>
+            <h1 className="text-base sm:text-3xl font-black tracking-tighter uppercase leading-none truncate max-w-[120px] sm:max-w-none">Portafolio <span className="hidden sm:inline">de <span className="text-gray-400">Estadías</span></span></h1>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-4">
             <a
               href={`https://${portfolioData.header.contact.linkedin}`}
               target="_blank" rel="noopener noreferrer"
               onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}
-              className="p-2 border-2 border-black hover:bg-black hover:text-white transition-all print:hidden"
+              className="p-2 sm:p-4 border-2 sm:border-4 border-black bg-white hover:bg-black hover:text-white transition-all print:hidden shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 sm:hover:translate-x-1 sm:hover:translate-y-1"
               title="LinkedIn"
             >
-              <Briefcase className="w-4 h-4" />
+              <Briefcase className="w-4 h-4 sm:w-6 sm:h-6" />
             </a>
             <a
               href="https://github.com/IsaiasSinthesys03"
               target="_blank" rel="noopener noreferrer"
               onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}
-              className="p-2 border-2 border-black hover:bg-black hover:text-white transition-all print:hidden"
+              className="p-2 sm:p-4 border-2 sm:border-4 border-black bg-white hover:bg-black hover:text-white transition-all print:hidden shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 sm:hover:translate-x-1 sm:hover:translate-y-1"
               title="GitHub"
             >
-              <Github className="w-4 h-4" />
+              <Github className="w-4 h-4 sm:w-6 sm:h-6" />
             </a>
             <button
               onClick={() => window.print()}
               onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}
-              className="flex items-center gap-2 px-6 py-2 bg-black text-white border-2 border-black font-bold text-xs tracking-widest uppercase print:hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all ml-2"
+              className="flex items-center gap-2 sm:gap-3 px-3 sm:px-10 py-2 sm:py-4 bg-black text-white border-2 sm:border-4 border-black font-black text-[10px] sm:text-sm tracking-widest uppercase print:hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 sm:hover:translate-x-2 sm:hover:translate-y-2 transition-all ml-1 sm:ml-4"
             >
-              <Printer className="w-4 h-4" /> Imprimir CV
+              <Printer className="w-4 h-4 sm:w-6 sm:h-6" /> <span className="hidden sm:inline">Imprimir CV</span>
             </button>
           </div>
         </div>
       </header>
 
-      {/* CONTENIDO PRINCIPAL */}
-      <main className="pt-32 print:pt-0 max-w-7xl mx-auto print:max-w-full print:px-0 relative z-10">
+      {/* CONTENIDO PRINCIPAL - CON DESPLAZAMIENTO HORIZONTAL EN MÓVIL */}
+      <div className="w-full overflow-x-auto print:overflow-visible pt-24 sm:pt-48">
+        <main className="w-[1100px] mx-auto print:max-w-full print:px-0 relative z-10 px-4 sm:px-0">
 
         {/* PÁGINA 1: PERFIL PROFESIONAL */}
         <div className="web-page-card print:shadow-none print:border-none print:bg-transparent print:mb-0">
@@ -421,12 +418,12 @@ export default function Portfolio() {
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse print:animate-none print:bg-black"></span>
                 Disponible para Estadías Profesionales
               </div>
-              <div className="flex flex-col lg:flex-row print:flex-row gap-12 print:gap-6 items-start justify-between">
+              <div className="flex flex-row print:flex-row gap-12 print:gap-6 items-start justify-between">
                 <div className="flex-1">
-                  <h1 className="text-6xl sm:text-7xl md:text-[6.5rem] print:text-4xl font-black tracking-tighter leading-[0.85] uppercase mb-8 text-black print:mb-1">
+                  <h1 className="text-[6.5rem] print:text-4xl font-black tracking-tighter leading-[0.85] uppercase mb-8 text-black print:mb-1 break-words">
                     {portfolioData.header.name}
                   </h1>
-                  <h2 className="text-2xl md:text-3xl print:text-lg font-bold border-l-8 border-black pl-6 mb-10 text-gray-800 print:mb-2 print:py-0.5 print:pl-3">
+                  <h2 className="text-3xl print:text-lg font-bold border-l-8 border-black pl-6 mb-10 text-gray-800 print:mb-2 print:py-0.5 print:pl-3">
                     {portfolioData.header.title}
                   </h2>
                   <p className="text-xl print:text-[10px] print:leading-tight leading-relaxed text-gray-600 font-medium max-w-4xl text-justify">
@@ -443,31 +440,31 @@ export default function Portfolio() {
               </div>
 
               <div className="flex flex-wrap gap-x-8 gap-y-4 mt-8 pt-6 border-t-2 border-black/10 print:border-black print:mt-2 print:pt-1 print:gap-y-1 print:gap-x-4">
-                <div className="flex items-center gap-2 text-sm print:text-[9px] font-bold">
-                  <Mail className="w-4 h-4 print:w-3 print:h-3 text-gray-500" />
+                <div className="flex items-center gap-2 text-sm print:text-[9px] font-bold break-all">
+                  <Mail className="w-4 h-4 print:w-3 print:h-3 text-gray-500 shrink-0" />
                   {portfolioData.header.contact.email}
                   <button
                     onClick={() => handleCopy(portfolioData.header.contact.email)}
-                    className="p-1 hover:bg-gray-100 rounded transition-colors print:hidden"
+                    className="p-1 hover:bg-gray-100 rounded transition-colors print:hidden shrink-0"
                     title="Copiar personal"
                   >
                     {copiedText === portfolioData.header.contact.email ? <CheckCircle2 className="w-3 h-3 text-green-600" /> : <Copy className="w-3 h-3" />}
                   </button>
                 </div>
-                <div className="flex items-center gap-2 text-sm print:text-[9px] font-bold">
-                  <GraduationCap className="w-4 h-4 print:w-3 print:h-3 text-gray-500" />
+                <div className="flex items-center gap-2 text-sm print:text-[9px] font-bold break-all">
+                  <GraduationCap className="w-4 h-4 print:w-3 print:h-3 text-gray-500 shrink-0" />
                   {portfolioData.header.contact.emailSchool}
                   <button
                     onClick={() => handleCopy(portfolioData.header.contact.emailSchool)}
-                    className="p-1 hover:bg-gray-100 rounded transition-colors print:hidden"
+                    className="p-1 hover:bg-gray-100 rounded transition-colors print:hidden shrink-0"
                     title="Copiar escolar"
                   >
                     {copiedText === portfolioData.header.contact.emailSchool ? <CheckCircle2 className="w-3 h-3 text-green-600" /> : <Copy className="w-3 h-3" />}
                   </button>
                 </div>
-                <span className="flex items-center gap-2 text-sm print:text-[9px] font-bold"><Phone className="w-4 h-4 print:w-3 print:h-3 text-gray-500" /> {portfolioData.header.contact.phone}</span>
-                <span className="flex items-center gap-2 text-sm print:text-[9px] font-bold"><MapPin className="w-4 h-4 print:w-3 print:h-3 text-gray-500" /> {portfolioData.header.contact.location}</span>
-                <span className="flex items-center gap-2 text-sm print:text-[9px] font-bold"><Github className="w-4 h-4 print:w-3 print:h-3 text-gray-500" /> github.com/IsaiasSinthesys03</span>
+                <span className="flex items-center gap-2 text-sm print:text-[9px] font-bold"><Phone className="w-4 h-4 print:w-3 print:h-3 text-gray-500 shrink-0" /> {portfolioData.header.contact.phone}</span>
+                <span className="flex items-center gap-2 text-sm print:text-[9px] font-bold"><MapPin className="w-4 h-4 print:w-3 print:h-3 text-gray-500 shrink-0" /> {portfolioData.header.contact.location}</span>
+                <span className="flex items-center gap-2 text-sm print:text-[9px] font-bold"><Github className="w-4 h-4 print:w-3 print:h-3 text-gray-500 shrink-0" /> github.com/IsaiasSinthesys03</span>
               </div>
             </div>
           </AnimatedSection>
@@ -833,6 +830,7 @@ export default function Portfolio() {
           </section>
         </div>
       </main>
+      </div>
 
       {/* FOOTER */}
       <footer className="bg-black text-white pt-32 pb-12 mt-32 print:hidden relative overflow-hidden">
