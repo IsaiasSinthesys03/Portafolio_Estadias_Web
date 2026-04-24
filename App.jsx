@@ -23,7 +23,8 @@ import {
   GraduationCap,
   MapPin,
   Phone,
-  Mail
+  Mail,
+  MessageCircle
 } from 'lucide-react';
 import profilePhoto from './assets/img/Foto_Isaias.jpeg';
 import helmetIcon from './assets/img/helmet.png';
@@ -42,7 +43,8 @@ const portfolioData = {
       emailSchool: "24090652@alumno.utmetropolitana.edu.mx",
       phone: "+52 999 272 7810",
       location: "Calle 21 #198c x8 y 8a1, Mérida, Yucatán, C.P. 91173",
-      linkedin: "www.linkedin.com/in/braulio-isaías-bernal-padrón-10a93a405?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+      linkedin: "www.linkedin.com/in/braulio-isaías-bernal-padrón-10a93a405?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      whatsapp: "9996360209"
     }
   },
   personalInfo: {
@@ -739,10 +741,10 @@ export default function Portfolio() {
 
                     {/* ICONO DECORATIVO 45 GRADOS - POSICIÓN AJUSTADA AL ESPACIO BLANCO */}
                     {DecoImage && (
-                      <img 
-                        src={DecoImage} 
-                        alt="decor" 
-                        className="absolute left-[38%] top-12 w-64 h-64 opacity-[0.12] group-hover/project:opacity-[0.20] transition-opacity duration-700 pointer-events-none transform rotate-[-45deg] print:opacity-[0.10]" 
+                      <img
+                        src={DecoImage}
+                        alt="decor"
+                        className="absolute left-[45%] top-12 w-64 h-64 opacity-[0.12] group-hover/project:opacity-[0.20] transition-opacity duration-700 pointer-events-none transform rotate-[-45deg] print:opacity-[0.10]"
                       />
                     )}
 
